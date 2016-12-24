@@ -19,7 +19,7 @@ RUN useradd -r -m -G docker jenkins
 RUN apt-get update && apt-get install -y openjdk-7-jre-headless && rm -rf /var/lib/apt/lists/*
 
 # Install Jenkins Swarm Client
-RUN curl -L http://maven.jenkins-ci.org/content/repositories/releases/org/jenkins-ci/plugins/swarm-client/${SWARM_CLIENT_VERSION}/swarm-client-${SWARM_CLIENT_VERSION}-jar-with-dependencies.jar > /home/jenkins/swarm-client-${SWARM_CLIENT_VERSION}-jar-with-dependencies.jar
+RUN curl -L http://repo.jenkins-ci.org/releases/org/jenkins-ci/plugins/swarm-client/${SWARM_CLIENT_VERSION}/swarm-client-${SWARM_CLIENT_VERSION}-jar-with-dependencies.jar > /home/jenkins/swarm-client-${SWARM_CLIENT_VERSION}-jar-with-dependencies.jar
 
 # Install Docker Compose
 RUN curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
