@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 MAINTAINER Cosmin Harangus <cosmin@around25.com>
 
 ENV DOCKER_COMPOSE_VERSION 1.13.0
-ENV SWARM_CLIENT_VERSION 2.2
+ENV SWARM_CLIENT_VERSION 3.4
 
 RUN apt-get update -qq && apt-get install -qqy \
     apt-transport-https \
@@ -27,4 +27,4 @@ RUN chmod +x /usr/local/bin/docker-compose
 
 WORKDIR /home/jenkins
 
-CMD /usr/bin/java -jar swarm-client-2.2-jar-with-dependencies.jar $COMMAND_OPTIONS
+CMD /usr/bin/java -jar swarm-client-${SWARM_CLIENT_VERSION}-jar-with-dependencies.jar $COMMAND_OPTIONS
