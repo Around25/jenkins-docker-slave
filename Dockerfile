@@ -1,7 +1,7 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 MAINTAINER Cosmin Harangus <cosmin@around25.com>
 
-ENV DOCKER_COMPOSE_VERSION 1.9.0
+ENV DOCKER_COMPOSE_VERSION 1.13.0
 ENV SWARM_CLIENT_VERSION 2.2
 
 RUN apt-get update -qq && apt-get install -qqy \
